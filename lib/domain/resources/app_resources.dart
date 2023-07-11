@@ -10,12 +10,15 @@ abstract final class AppResources {
       "Широты могут быть от ${AppResources.valueLatitudeMin} до ${AppResources.valueLatitudeMax} градусов";
   static const stringLongNotInRange =
       "Долготы могут быть от ${AppResources.valueLongitudeMin} до ${AppResources.valueLongitudeMax} градусов";
+  static const stringLoadError = "Не удалось загрузить изображение";
   // Values
   static const valueLatitudeMax = 90;
   static const valueLatitudeMin = -90;
   static const valueLongitudeMax = 180;
   static const valueLongitudeMin = -180;
+  static const valueTileSize = 256;
   // Dimens
   static const dimensHeightBetween = 16.0;
   static const dimensCircularRadius = 16.0;
+  static const dimensTextFieldWidthFactor = 0.5;
 }

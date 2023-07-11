@@ -1,13 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:vice_ser_oeg/domain/resources/app_resources.dart';
+
+import 'package:vice_ser_oeg/ui/screens/main_screen/main_screen_model.dart';
 
 class TileCardWidget extends StatelessWidget {
   const TileCardWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final data = MainScreenModelProvider.of(context)?.data;
+    final (x, y, z) = data?.xyz ?? (0, 0, 0);
+    final image = data?.image?.image;
     return Card(
-      child: Image.network(
-          "https://core-carparks-renderer-lots.maps.yandex.net/maps-rdr-carparks/tiles?l=carparks&x=316898&y=164368&z=19&scale=1&lang=ru_RU"),
+      child: Column(
+        children: [
+          Text("x:$x y:$y zoom:$z"),
+          const SizedBox(
+            height: AppResources.dimensHeightBetween,
+          ),
+          image != null
+              ? Image(image: image)
+              : const Text(AppResources.stringLoadError),
+        ],
+      ),
     );
   }
 }

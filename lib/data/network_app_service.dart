@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:vice_ser_oeg/data/i_app_service.dart';
 
 class NetworkAppService implements IAppService {
+  const NetworkAppService();
   @override
   Image load(String source) {
     try {

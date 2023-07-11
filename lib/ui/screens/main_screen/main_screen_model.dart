@@ -9,9 +9,7 @@ class MainScreenModel extends ChangeNotifier {
   var data = const MainScreenEntity();
 
   void search(String latitude, String longitude, String zoom) {
-    try {
-      data = repository.search(latitude, longitude, zoom);
-    } catch (e, st) {}
+    data = repository.search(latitude, longitude, zoom);
     notifyListeners();
   }
 }

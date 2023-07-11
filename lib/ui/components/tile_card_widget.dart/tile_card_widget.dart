@@ -11,6 +11,7 @@ class TileCardWidget extends StatelessWidget {
     final data = MainScreenModelProvider.of(context)?.data;
     final (x, y, z) = data?.xyz ?? (0, 0, 0);
     final image = data?.image?.image;
+
     return Card(
       child: Column(
         children: [
@@ -18,9 +19,9 @@ class TileCardWidget extends StatelessWidget {
           const SizedBox(
             height: AppResources.dimensHeightBetween,
           ),
-          image != null
-              ? Image(image: image)
-              : const Text(AppResources.stringLoadError),
+          image == null
+              ? const Text(AppResources.stringLoadError)
+              : Image(image: image),
         ],
       ),
     );

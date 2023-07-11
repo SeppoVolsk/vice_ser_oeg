@@ -12,9 +12,12 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final controllerLatitude = TextEditingController();
-  final controllerLongitude = TextEditingController();
-  final controllerZoom = TextEditingController();
+  final controllerLatitude = TextEditingController()
+    ..text = "${AppResources.valueInitialLatitude}";
+  final controllerLongitude = TextEditingController()
+    ..text = "${AppResources.valueInitialLongitude}";
+  final controllerZoom = TextEditingController()
+    ..text = "${AppResources.valueInitialZoom}";
   final GlobalKey<FormState> formKey = GlobalKey();
 
   @override

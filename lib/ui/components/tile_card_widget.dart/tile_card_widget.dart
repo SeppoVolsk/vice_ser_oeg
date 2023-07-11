@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vice_ser_oeg/domain/resources/app_resources.dart';
-
+import 'package:vice_ser_oeg/ui/components/error_widget/app_error_widget.dart';
 import 'package:vice_ser_oeg/ui/screens/main_screen/main_screen_model.dart';
 
 class TileCardWidget extends StatelessWidget {
@@ -10,8 +10,7 @@ class TileCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final data = MainScreenModelProvider.of(context)?.data;
     final (x, y, z) = data?.xyz ?? (0, 0, 0);
-    final image = data?.image?.image;
-
+    final image = data?.image;
     return Card(
       child: Column(
         children: [
@@ -19,9 +18,7 @@ class TileCardWidget extends StatelessWidget {
           const SizedBox(
             height: AppResources.dimensHeightBetween,
           ),
-          image == null
-              ? const Text(AppResources.stringLoadError)
-              : Image(image: image),
+          image ?? const AppErrorWidget(),
         ],
       ),
     );

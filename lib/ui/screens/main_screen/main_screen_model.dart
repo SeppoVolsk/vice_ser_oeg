@@ -6,7 +6,7 @@ class MainScreenModel extends ChangeNotifier {
   MainScreenModel(this.repository);
   final IAppRepository repository;
 
-  var data = const MainScreenEntity();
+  MainScreenEntity data = MainScreenEntity.initial();
 
   void search(String latitude, String longitude, String zoom) {
     data = repository.search(latitude, longitude, zoom);

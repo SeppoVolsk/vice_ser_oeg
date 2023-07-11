@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 abstract final class AppResources {
   // Strings
   static const stringAppTitle = "Геосервис задание";
@@ -17,8 +19,13 @@ abstract final class AppResources {
   static const valueLongitudeMax = 180;
   static const valueLongitudeMin = -180;
   static const valueTileSize = 256;
+  static const valueInitialLatitude = 55.686889;
+  static const valueInitialLongitude = 37.717747;
+  static const valueInitialZoom = 16;
   // Dimens
   static const dimensHeightBetween = 16.0;
   static const dimensCircularRadius = 16.0;
   static const dimensTextFieldWidthFactor = 0.5;
+  // Colors
+  static const colorsSeedColor = Colors.deepPurple;
 }

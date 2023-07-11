@@ -1,14 +1,14 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:vice_ser_oeg/data/i_app_service.dart';
+import 'package:vice_ser_oeg/ui/components/error_widget/app_error_widget.dart';
 
 class NetworkAppService implements IAppService {
   const NetworkAppService();
   @override
   Image load(String source) {
-    try {
-      return Image.network(source);
-    } catch (e, st) {
-      rethrow;
-    }
+    return Image.network(
+      source,
+      errorBuilder: (context, error, stackTrace) => const AppErrorWidget(),
+    );
   }
 }
